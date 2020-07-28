@@ -77,14 +77,14 @@ box-sizing: inherit;
   line-height: 1.19;
   margin-right: 85px;
   color: var(--accent-color);
-  transition-property: color, fill;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   /* identical to box height */
 }
 
 .part-logo {
   color: var(--title-text-color);
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .part-logo:hover,
@@ -111,6 +111,7 @@ box-sizing: inherit;
   margin: 0 auto;
   padding-left: 15px;
   padding-right: 15px;
+  
 }
 
 /* --Navigation container-- */
@@ -133,14 +134,17 @@ box-sizing: inherit;
 .header .link {
 padding-top: 30px;
 padding-bottom: 30px;
-transition-property: color, fill;
+position: relative;
+color: var(--title-text-color);
+transition-property: color;
 transition-duration: 250ms;
 transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); 
-position: relative;
-color:currentColor;
-
-
 }
+
+.header .link:hover {
+  color: var(--accent-color);
+}
+
 
 .header .link::after {
 content: "";
@@ -154,20 +158,27 @@ position: absolute;
 left: 0px;
 bottom: 0px;
 opacity: 0;
-transition-property: color, fill;
+color: var(--title-text-color);
+transition-property: color;
 transition-duration: 250ms;
 transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-color: var(--accent-color)
+
 }
 
 .header .link:hover::after {
   opacity: 1;
+  color: var(--accent-color);
 }
 
 .header .link-current {
-  transition-property: color, fill;
+  color: var(--accent-color);
+  transition-property: color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  
+}
+
+.header .link-current:hover {
   color: var(--accent-color);
 }
 
@@ -213,6 +224,9 @@ color: var(--accent-color)
 
 .auth-nav .icon,
 .auth-link {
+  border-radius: 0;
+  color: #757575;
+  fill: #757575;
   transition-property: color, fill;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -317,10 +331,13 @@ color: crimson
 .advantages .icon-container {
   width: 270px;
   height: 120px;
-  background-color: #f5f4fa;
   padding: 25px 100px;
   border-radius: 4px;
   margin-left: 0px;
+  background-color: #f5f4fa;
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .advantages .icon-container:hover,
@@ -486,13 +503,14 @@ margin: 0 auto;
   height: 44px;
   border-radius: 50%;
   color: var(--primary-white-color);
-  transition-property: color, fill;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   background-color: var(--primary-white-color);
   align-content: center;
   justify-content: center;
   align-items: center;
+
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-item .link:hover,
@@ -502,18 +520,15 @@ margin: 0 auto;
 
 .social-item .icon {
   fill: var(--description-text-color);
-  color: currentColor;
-  transition-property: color, fill;
+  transition-property: fill;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  
 }
 
 .link:hover .icon, 
 .link:focus .icon {
   fill: var(--primary-white-color);
-  transition-property: color, fill;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customers {
@@ -543,6 +558,9 @@ margin: 0 auto;
   display: flex;
   margin: auto;
   border: 1px solid var(--description-text-color);
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 3px;
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(4px);
@@ -563,8 +581,9 @@ margin: 0 auto;
 }
 
 .customer-link .icon {
- fill: var(--description-text-color);
-  transition-property: color, fill;
+  color: var(--description-text-color);
+  fill: var(--description-text-color);
+  transition-property: fill, color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -572,9 +591,11 @@ margin: 0 auto;
 
 .customer-link:hover {
   color: var(--accent-color);
+  fill: var(--accent-color);
 }
 
 .customer-link:hover .icon {
+  color: var(--accent-color);
   fill: var(--accent-color);
   border: 1px solid var(--accent-color);
 }
@@ -635,11 +656,15 @@ margin: 0 auto;
   /* украшения   */
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
+  transition-property: box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .order-service:hover,
 .order-service:focus {
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  
 }
 
 .order-service:active {
@@ -673,6 +698,10 @@ div {
   /* цвета */
   color: var(--primary-white-color);
   background: var(--accent-color);
+
+  transition-property: color, background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   
   /* украшения   */
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
@@ -682,6 +711,9 @@ div {
 .all-services:hover,
 .all-services:focus {
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  color: var(--primary-white-color);
+  background: var(--accent-color);
+
 }
 
 .all-services:active {
@@ -714,6 +746,9 @@ div {
   /* цвета */
   color: var(--primary-black-color);
   background: var(--primary-white-color);
+  transition-property: color, background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   
   /* украшения   */
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
@@ -724,6 +759,7 @@ div {
 .service:focus {
  background-color: var(--accent-color);
  color: var(--primary-white-color);
+ 
 }
 
 .service:active {
@@ -838,12 +874,14 @@ padding-bottom: 34px;
 .feature-thumb:hover .feature-overlay{
   transform: translateY(0%); 
   opacity: 0.9;
+
 }
 
 .feature-description:hover {
   color: var(--primary-white-color);
   text-align: center;
   opacity: 1;
+  
 }
 
 .feature-description {
@@ -945,19 +983,19 @@ padding-bottom: 34px;
 .footer .part-logo-footer,
 .address {
 color: var(--primary-white-color);
+transition-property: color;
+transition-duration: 250ms;
+transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer .part-logo {
   color: var(--accent-color);
 }
 
-.footer .part-logo-footer {
-  color: var(--primary-white-color);
-}
-
 .footer .part-logo-footer:hover,
 .footer .part-logo-footer:focus {
   color: var(--accent-color);
+  
 }
 
 .footer .part-logo:active,
@@ -967,11 +1005,15 @@ color: var(--primary-white-color);
 
 .footer .contact-link {
   color: var(--description-text-color);
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer .contact-link:hover,
 .footer .contact-link:focus {
   color: var(--accent-color);
+  
 }
 
 .footer .join {
@@ -1012,7 +1054,7 @@ color: var(--primary-white-color);
   background-color: #2F303A;
   fill: var(--primary-white-color);
   color: var(--primary-white-color);
-  transition-property: color, fill;
+  transition-property: background-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -1020,6 +1062,7 @@ color: var(--primary-white-color);
 .join-social-item .join-link:hover,
 .join-social-item .join-link:focus {
 background-color: var(--accent-color);
+
 }
 
 .footer .left-container {
@@ -1032,9 +1075,6 @@ background-color: var(--accent-color);
 }
 .left-container .link {
   margin-bottom: 9px;
-  transition-property: color, fill;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .left-container .contacts {
